@@ -9,6 +9,7 @@ import com.sn.socialEmulator.model.User;
 @Repository
 public interface UserRepository extends  MongoRepository<User, String> {
 
+	User save(User userData);
 
 }
 
