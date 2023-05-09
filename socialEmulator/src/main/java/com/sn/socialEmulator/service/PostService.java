@@ -44,11 +44,13 @@ public class PostService {
 	public ResponseEntity<?> savePostData(PostData request) {
 		PostDetails postData = new PostDetails();
 	    postData.setEmail(request.getEmail());
-	    postData.setUrl(request.getDigitalSignature());
+	    postData.setDigitalSignature(request.getDigitalSignature());
+	    postData.setCaption(request.getCaption());
+	    postData.setName(request.getName());
 
 	    try {
 	        postData = prepository.save(postData);
-	        return new ResponseEntity<>(postData, HttpStatus.CREATED);
+	        return new ResponseEntity<>(postData, HttpStatus.OK);
 	    } catch (Exception e) {
 	    	System.out.println(e);
 	        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

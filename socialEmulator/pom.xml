@@ -8,11 +8,11 @@
 		<version>3.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sn</groupId>
-	<artifactId>SN-Project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>SN-Project</name>
-	<description>SNProject</description>
+	<groupId>com.social</groupId>
+	<artifactId>SocialEmulator-Project</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>SocialEmulator</name>
+	<description>SocialEmulator</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
