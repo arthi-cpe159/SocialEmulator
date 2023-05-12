@@ -8,14 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	public class User {
 	    @Id
 	    private String email;
-		private int password;
+		private String password;
 	  
 
 		public void setEmail(String email) {
 			this.email = email;
 		}
 
-		public void setPassword(int password) {
+		public void setPassword(String password) {
 			this.password = password;
 		}
 
@@ -26,7 +26,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 		    }
 
 
-	    public User(String email, int password) {
+	    public User(String email, String password) {
 	        this.email = email;
 	        this.password = password;
 	       
@@ -36,7 +36,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	        return email;
 	    }
 
-	    public int getPassword() {
+	    public String getPassword() {
 	        return password;
 	    }
 
