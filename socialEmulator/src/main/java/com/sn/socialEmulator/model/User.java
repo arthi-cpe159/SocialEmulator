@@ -26,7 +26,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 		    }
 
 
-	    public User(String email, String password, String fullName) {
+	    public User(String email, int password) {
 	        this.email = email;
 	        this.password = password;
 	       
@@ -36,13 +36,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	        return email;
 	    }
 
-	    public String getPassword() {
+	    public int getPassword() {
 	        return password;
 	    }
 
-	    public String getFullName() {
-	        return fullName;
-	    }
+	   
 
 	 
 	
