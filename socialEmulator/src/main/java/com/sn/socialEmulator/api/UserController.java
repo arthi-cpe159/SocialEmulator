@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.sn.socialEmulator.model.User;
 import com.sn.socialEmulator.payload.PostData;
 import com.sn.socialEmulator.service.PostService;
+import com.sn.socialEmulator.service.UserService;
 
 import jakarta.validation.Valid;
 
@@ -22,6 +23,8 @@ public class UserController {
 	@Autowired
 	private PostService postService;
 	
+	@Autowired
+	private UserService userService;
 	 @GetMapping(path="/GetlistOfPosts")
 	    public ResponseEntity<?> getPosts(){
 		 return postService.getAllData();		 
@@ -30,6 +33,11 @@ public class UserController {
 	 @PostMapping(path="/SavePost")
 	    public ResponseEntity<?> SavePosts(@Valid @RequestBody PostData request){
 		  return postService.savePostData(request);
+	 }
+	 
+	 @PostMapping(path="/SaveUser")
+	    public ResponseEntity<?> SaveUser(@Valid @RequestBody User request){
+		  return userService.saveUserData(request);
 	 }
 
 }
