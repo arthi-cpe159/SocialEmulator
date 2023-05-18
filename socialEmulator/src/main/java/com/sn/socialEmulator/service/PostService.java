@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Date;
 import java.util.List;
 
 import javax.crypto.IllegalBlockSizeException;
@@ -47,6 +48,7 @@ public class PostService {
 	    postData.setDigitalSignature(request.getDigitalSignature());
 	    postData.setCaption(request.getCaption());
 	    postData.setName(request.getName());
+	    postData.setTimeStamp(new Date());
 
 	    try {
 	        postData = prepository.save(postData);

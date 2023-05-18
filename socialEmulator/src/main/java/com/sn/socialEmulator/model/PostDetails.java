@@ -1,5 +1,7 @@
 package com.sn.socialEmulator.model;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,17 +12,20 @@ public class PostDetails {
 	private String email;
 	private String caption;
 	private String name;
+    private Date timestamp;
+
 	
 	public PostDetails() {
 		
 	}
 	
-	public PostDetails(String digitalSignature, String email, String caption, String name) {
+	public PostDetails(String digitalSignature, String email, String caption, String name, Date time) {
 		
 		this.digitalSignature = digitalSignature;
 		this.email = email;
 		this.caption = caption;
 		this.name = name;
+		this.timestamp = time;
 	}
 		
 	public String getDigitalSignature() {
@@ -46,6 +51,12 @@ public class PostDetails {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Date getTimeStamp() {
+		return timestamp;
+	}
+	public void setTimeStamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 	
 	
